@@ -18,3 +18,11 @@ local balloon = display.newImageRect( "balloon.png", 112, 112 )
 balloon.x = display.contentCenterX
 balloon.y = display.contentCenterY
 balloon.alpha = 0.8
+
+local physics = require( "physics" )
+physics.start()
+
+physics.addBody( platform, "static" )
+physics.addBody( balloon, "dynamic", { radius=50, bounce=0.3 } )
+
+
